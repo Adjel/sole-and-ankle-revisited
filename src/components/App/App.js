@@ -22,13 +22,10 @@ const Main = styled.main`
   padding: 64px 32px;
 
   @media ${QUERIES.desktopAndUp} {
-    background: red;
   }
   @media ${QUERIES.talbletAndUp} {
-    background: blue;
   }
   @media ${QUERIES.phoneAndUp} {
-    background: yellow;
   }
 `;
 
