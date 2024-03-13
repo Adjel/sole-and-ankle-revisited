@@ -21,11 +21,11 @@ const App = () => {
 const Main = styled.main`
   padding: 64px 32px;
 
-  @media ${QUERIES.desktopAndUp} {
+  @media ${QUERIES.desktopAndSmaller} {
   }
-  @media ${QUERIES.talbletAndUp} {
+  @media ${QUERIES.talbletAndSmaller} {
   }
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.phoneAndSmaller} {
   }
 `;
 
