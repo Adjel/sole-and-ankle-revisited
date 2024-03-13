@@ -24,7 +24,7 @@ export const BREAKPOINTS = {
 };
 
 export const QUERIES = {
-  desktopAndUp: `(max-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
-  talbletAndUp: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
-  phoneAndUp: `(max-width: ${BREAKPOINTS.phoneMin / 16}rem)`,
+  desktopAndSmaller: `(max-width: ${BREAKPOINTS.laptopMin / 16}rem)`,
+  talbletAndSmaller: `(max-width: ${BREAKPOINTS.tabletMin / 16}rem)`,
+  phoneAndSmaller: `(max-width: ${BREAKPOINTS.phoneMin / 16}rem)`,
 };

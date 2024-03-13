@@ -22,28 +22,28 @@ const Header = () => {
         <Side>
           <Logo />
         </Side>
-        <Nav>
+        <DesktopNav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
           <NavLink href="/men">Men</NavLink>
           <NavLink href="/women">Women</NavLink>
           <NavLink href="/kids">Kids</NavLink>
           <NavLink href="/collections">Collections</NavLink>
-        </Nav>
+        </DesktopNav>
         <Side />
         <SmallScreenHeader>
           <Logo />
-          <MobileButtonWrapper>
-            <MobileButton>
+          <MobileActions>
+            <UnstyledButton>
               <Icon id={"shopping-bag"} stroke={2} size={24} />
-            </MobileButton>
-            <MobileButton>
+            </UnstyledButton>
+            <UnstyledButton>
               <Icon id={"search"} stroke={2} size={24} />
-            </MobileButton>
-            <MobileButton>
+            </UnstyledButton>
+            <UnstyledButton>
               <Icon id={"menu"} stroke={2} size={24} />
-            </MobileButton>
-          </MobileButtonWrapper>
+            </UnstyledButton>
+          </MobileActions>
         </SmallScreenHeader>
       </MainHeader>
 
@@ -62,22 +62,23 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
-  @media ${QUERIES.talbletAndUp} {
+  @media ${QUERIES.talbletAndSmaller} {
     padding: 0 32px;
     align-items: center;
+    border-top: 4px solid ${COLORS.gray[900]};
   }
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.phoneAndSmaller} {
     padding: 0 16px;
     align-items: center;
   }
 `;
 
-const Nav = styled.nav`
+const DesktopNav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
 
-  @media ${QUERIES.talbletAndUp} {
+  @media ${QUERIES.talbletAndSmaller} {
     display: none;
   }
 `;
@@ -85,7 +86,7 @@ const Nav = styled.nav`
 const Side = styled.div`
   flex: 1;
 
-  @media ${QUERIES.talbletAndUp} {
+  @media ${QUERIES.talbletAndSmaller} {
     display: none;
   }
 `;
@@ -93,7 +94,7 @@ const Side = styled.div`
 const SmallScreenHeader = styled.nav`
   display: none;
 
-  @media ${QUERIES.talbletAndUp} {
+  @media ${QUERIES.talbletAndSmaller} {
     display: flex;
     width: 100%;
     margin: 0;
@@ -102,17 +103,17 @@ const SmallScreenHeader = styled.nav`
   }
 `;
 
-const MobileButtonWrapper = styled.div`
+const MobileActions = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.phoneAndSmaller} {
     gap: 1rem;
   }
 `;
 
-const MobileButton = styled.button`
+const UnstyledButton = styled.button`
   color: ${COLORS.gray[900]};
   background: none;
   border: none;
