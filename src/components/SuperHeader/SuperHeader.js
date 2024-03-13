@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   background-color: ${COLORS.gray[900]};
   height: 40px;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.talbletAndUp} {
     height: 4px;
   }
 `;
@@ -45,7 +45,7 @@ const DesktopWrapper = styled.div`
   padding-left: 32px;
   padding-right: 32px;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.talbletAndUp} {
     display: none;
   }
 `;

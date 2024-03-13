@@ -62,8 +62,13 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
+  @media ${QUERIES.talbletAndUp} {
+    padding: 0 32px;
+    align-items: center;
+  }
   @media ${QUERIES.phoneAndUp} {
-    padding: 16px;
+    padding: 0 16px;
+    align-items: center;
   }
 `;
 
@@ -72,7 +77,7 @@ const Nav = styled.nav`
   gap: 48px;
   margin: 0px 48px;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.talbletAndUp} {
     display: none;
   }
 `;
@@ -80,7 +85,7 @@ const Nav = styled.nav`
 const Side = styled.div`
   flex: 1;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.talbletAndUp} {
     display: none;
   }
 `;
@@ -88,7 +93,7 @@ const Side = styled.div`
 const SmallScreenHeader = styled.nav`
   display: none;
 
-  @media ${QUERIES.phoneAndUp} {
+  @media ${QUERIES.talbletAndUp} {
     display: flex;
     width: 100%;
     margin: 0;
@@ -100,7 +105,11 @@ const SmallScreenHeader = styled.nav`
 const MobileButtonWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+
+  @media ${QUERIES.phoneAndUp} {
+    gap: 1rem;
+  }
 `;
 
 const MobileButton = styled.button`
