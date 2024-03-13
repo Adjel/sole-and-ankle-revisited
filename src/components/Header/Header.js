@@ -22,17 +22,6 @@ const Header = () => {
         <Side>
           <Logo />
         </Side>
-        <SmallScreenNav>
-          <MobileButton>
-            <Icon id={"shopping-bag"} stroke={2} size={24} />
-          </MobileButton>
-          <MobileButton>
-            <Icon id={"search"} stroke={2} size={24} />
-          </MobileButton>
-          <MobileButton>
-            <Icon id={"menu"} stroke={2} size={24} />
-          </MobileButton>
-        </SmallScreenNav>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -42,6 +31,20 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <SmallScreenHeader>
+          <Logo />
+          <MobileButtonWrapper>
+            <MobileButton>
+              <Icon id={"shopping-bag"} stroke={2} size={24} />
+            </MobileButton>
+            <MobileButton>
+              <Icon id={"search"} stroke={2} size={24} />
+            </MobileButton>
+            <MobileButton>
+              <Icon id={"menu"} stroke={2} size={24} />
+            </MobileButton>
+          </MobileButtonWrapper>
+        </SmallScreenHeader>
       </MainHeader>
 
       <MobileMenu
@@ -60,7 +63,7 @@ const MainHeader = styled.div`
   border-bottom: 1px solid ${COLORS.gray[300]};
 
   @media ${QUERIES.phoneAndUp} {
-    padding: 18px 16px;
+    padding: 16px;
   }
 `;
 
@@ -74,21 +77,30 @@ const Nav = styled.nav`
   }
 `;
 
-const SmallScreenNav = styled.nav`
-  display: none;
-
-  @media ${QUERIES.phoneAndUp} {
-    display: flex;
-    margin: 0;
-  }
-`;
-
 const Side = styled.div`
   flex: 1;
 
   @media ${QUERIES.phoneAndUp} {
-    margin-right: auto;
+    display: none;
   }
+`;
+
+const SmallScreenHeader = styled.nav`
+  display: none;
+
+  @media ${QUERIES.phoneAndUp} {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+const MobileButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
 
 const MobileButton = styled.button`
