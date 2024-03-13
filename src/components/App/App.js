@@ -24,8 +24,10 @@ const Main = styled.main`
   @media ${QUERIES.desktopAndSmaller} {
   }
   @media ${QUERIES.talbletAndSmaller} {
+    padding: 48px 32px;
   }
   @media ${QUERIES.phoneAndSmaller} {
+    padding: 48px 16px;
   }
 `;
 
