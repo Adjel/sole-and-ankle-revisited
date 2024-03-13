@@ -1,10 +1,11 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import { COLORS, QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import Icon from "../Icon";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -30,6 +31,20 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <SmallScreenHeader>
+          <Logo />
+          <MobileButtonWrapper>
+            <MobileButton>
+              <Icon id={"shopping-bag"} stroke={2} size={24} />
+            </MobileButton>
+            <MobileButton>
+              <Icon id={"search"} stroke={2} size={24} />
+            </MobileButton>
+            <MobileButton>
+              <Icon id={"menu"} stroke={2} size={24} />
+            </MobileButton>
+          </MobileButtonWrapper>
+        </SmallScreenHeader>
       </MainHeader>
 
       <MobileMenu
@@ -46,16 +61,61 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+
+  @media ${QUERIES.talbletAndUp} {
+    padding: 0 32px;
+    align-items: center;
+  }
+  @media ${QUERIES.phoneAndUp} {
+    padding: 0 16px;
+    align-items: center;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${QUERIES.talbletAndUp} {
+    display: none;
+  }
 `;
 
 const Side = styled.div`
   flex: 1;
+
+  @media ${QUERIES.talbletAndUp} {
+    display: none;
+  }
+`;
+
+const SmallScreenHeader = styled.nav`
+  display: none;
+
+  @media ${QUERIES.talbletAndUp} {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+`;
+
+const MobileButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media ${QUERIES.phoneAndUp} {
+    gap: 1rem;
+  }
+`;
+
+const MobileButton = styled.button`
+  color: ${COLORS.gray[900]};
+  background: none;
+  border: none;
 `;
 
 const NavLink = styled.a`
