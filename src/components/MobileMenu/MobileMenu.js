@@ -46,7 +46,7 @@ const Dialog = styled(DialogOverlay)`
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: hsla(220deg 5% 40% / 0.8);
+  background-color: var(--color-backdrop);
   display: flex;
   justify-content: flex-end;
 
@@ -84,7 +84,7 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
@@ -100,7 +100,7 @@ const Footer = styled.footer`
 `;
 
 const PolicyLink = styled.a`
-  color: ${COLORS.gray[700]};
+  color: var(--color-gray-700);
   font-size: ${14 / 16}rem;
   font-weight: ${WEIGHTS.normal};
 `;

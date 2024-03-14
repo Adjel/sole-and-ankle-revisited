@@ -59,14 +59,14 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
 
   overflow: auto;
 
   @media ${QUERIES.talbletAndSmaller} {
     padding: 0 32px;
     align-items: center;
-    border-top: 4px solid ${COLORS.gray[900]};
+    border-top: 4px solid var(--color-gray-900);
   }
   @media ${QUERIES.phoneAndSmaller} {
     padding: 0 16px;
@@ -115,7 +115,7 @@ const MobileActions = styled.div`
 `;
 
 const UnstyledButton = styled.button`
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   background: none;
   border: none;
 `;
@@ -124,11 +124,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
-  font-weight: ${WEIGHTS.medium};
+  color: var(--color-gray-900);
+  font-weight: var(--weight-medium);
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 
