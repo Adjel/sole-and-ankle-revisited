@@ -9,14 +9,19 @@ const App = () => {
   const [sortId, setSortId] = React.useState("newest");
 
   return (
-    <>
-      <Header />
+    <Test>
       <Main>
         <ShoeIndex sortId={sortId} setSortId={setSortId} />
       </Main>
-    </>
+      <Header />
+    </Test>
   );
 };
+
+const Test = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+`;
 
 const Main = styled.main`
   padding: 64px 32px;
