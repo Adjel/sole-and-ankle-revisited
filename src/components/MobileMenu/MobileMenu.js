@@ -16,58 +16,68 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
   return (
     <Dialog>
-      <DismissButon onClick={onDismiss}>
-        <X />
-      </DismissButon>
-      <Spacer />
-      <MobileNav>
-        <NavLink href="/sale">Sale</NavLink>
-        <NavLink href="/new">New&nbsp;Releases</NavLink>
-        <NavLink href="/men">Men</NavLink>
-        <NavLink href="/women">Women</NavLink>
-        <NavLink href="/kids">Kids</NavLink>
-        <NavLink href="/collections">Collections</NavLink>
-      </MobileNav>
-      <Spacer>
-        <PolicyFooter>
+      <Content aria-label="Menu">
+        <DismissButon onClick={onDismiss}>
+          <VisuallyHidden>Dismiss menu</VisuallyHidden>
+          <X />
+        </DismissButon>
+        <Spacer />
+        <Nav>
+          <NavLink href="/sale">Sale</NavLink>
+          <NavLink href="/new">New&nbsp;Releases</NavLink>
+          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/women">Women</NavLink>
+          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/collections">Collections</NavLink>
+        </Nav>
+        <Footer>
           <PolicyLink href="/terms">Terms and Conditions</PolicyLink>
           <PolicyLink href="/privacy">Privacy Policy</PolicyLink>
           <PolicyLink href="/contact">Contact Us</PolicyLink>
-        </PolicyFooter>
-      </Spacer>
+        </Footer>
+      </Content>
     </Dialog>
   );
 };
 
 const Dialog = styled(DialogOverlay)`
   position: fixed;
-  background-color: white;
   top: 0;
+  bottom: 0;
   right: 0;
+  left: 0;
+  background-color: hsla(220deg 5% 40% / 0.8);
   display: flex;
-  flex-direction: column;
-
-  width: 85%;
-  height: 100%;
-  padding-left: 32px;
-  padding-bottom: 32px;
+  justify-content: flex-end;
 
   :root {
     --reach-dialog: 1;
   }
 `;
 
+const Content = styled(DialogContent)`
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+`;
+
 const DismissButon = styled.button`
+  position: absolute;
   background-color: transparent;
   border: none;
   align-self: flex-end;
-  padding: 26px 16px 0 0;
+  top: 16px;
+  right: 0;
+  padding: 16px;
 `;
 
-const MobileNav = styled.nav`
+const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
 `;
 
 const NavLink = styled.a`
@@ -82,11 +92,11 @@ const NavLink = styled.a`
   }
 `;
 
-const PolicyFooter = styled.footer`
+const Footer = styled.footer`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  width: 100%;
+  justify-content: flex-end;
 `;
 
 const PolicyLink = styled.a`
@@ -97,9 +107,6 @@ const PolicyLink = styled.a`
 
 const Spacer = styled.div`
   flex: 1;
-  display: flex;
-  flex-direction: colum;
-  align-items: flex-end;
 `;
 
 export default MobileMenu;
