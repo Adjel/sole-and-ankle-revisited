@@ -59,11 +59,9 @@ const MainHeader = styled.div`
   display: flex;
   align-items: baseline;
   padding: 18px 32px;
-  height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
   overflow: auto;
-  overflow-y: hidden;
 
   @media ${QUERIES.talbletAndSmaller} {
     padding: 0 32px;
@@ -78,7 +76,7 @@ const MainHeader = styled.div`
 
 const DesktopNav = styled.nav`
   display: flex;
-  gap: clamp(3rem, 9.1vw - 2.75rem, 5rem);
+  gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
   margin: 0px 48px;
 
   @media ${QUERIES.talbletAndSmaller} {
