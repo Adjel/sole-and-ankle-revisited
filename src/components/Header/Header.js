@@ -40,7 +40,7 @@ const Header = () => {
             <UnstyledButton>
               <Icon id={"search"} stroke={2} size={24} />
             </UnstyledButton>
-            <UnstyledButton>
+            <UnstyledButton onClick={setShowMobileMenu}>
               <Icon id={"menu"} stroke={2} size={24} />
             </UnstyledButton>
           </MobileActions>
@@ -62,6 +62,9 @@ const MainHeader = styled.div`
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
 
+  overflow: auto;
+  overflow-y: hidden;
+
   @media ${QUERIES.talbletAndSmaller} {
     padding: 0 32px;
     align-items: center;
@@ -75,7 +78,7 @@ const MainHeader = styled.div`
 
 const DesktopNav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(3rem, 9.1vw - 2.75rem, 5rem);
   margin: 0px 48px;
 
   @media ${QUERIES.talbletAndSmaller} {
