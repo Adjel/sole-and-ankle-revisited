@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { QUERIES } from "../../constants";
 
 import SHOES from "../../data";
 import ShoeCard from "../ShoeCard";
@@ -17,6 +18,7 @@ const ShoeGrid = () => {
 };
 
 const Wrapper = styled.div`
+  display: flex;
   flex-wrap: wrap;
   gap: 32px;
   /*

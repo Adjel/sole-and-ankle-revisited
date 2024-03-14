@@ -9,16 +9,16 @@ const App = () => {
   const [sortId, setSortId] = React.useState("newest");
 
   return (
-    <Test>
+    <ReverseWrapper>
       <Main>
         <ShoeIndex sortId={sortId} setSortId={setSortId} />
       </Main>
       <Header />
-    </Test>
+    </ReverseWrapper>
   );
 };
 
-const Test = styled.div`
+const ReverseWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
 `;
