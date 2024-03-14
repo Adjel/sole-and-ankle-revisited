@@ -16,45 +16,57 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 
   return (
     <Dialog>
-      <DismissButon onClick={onDismiss}>
-        <X />
-      </DismissButon>
-      <Spacer />
-      <MobileNav>
-        <NavLink href="/sale">Sale</NavLink>
-        <NavLink href="/new">New&nbsp;Releases</NavLink>
-        <NavLink href="/men">Men</NavLink>
-        <NavLink href="/women">Women</NavLink>
-        <NavLink href="/kids">Kids</NavLink>
-        <NavLink href="/collections">Collections</NavLink>
-      </MobileNav>
-      <Spacer>
-        <PolicyFooter>
-          <PolicyLink href="/terms">Terms and Conditions</PolicyLink>
-          <PolicyLink href="/privacy">Privacy Policy</PolicyLink>
-          <PolicyLink href="/contact">Contact Us</PolicyLink>
-        </PolicyFooter>
-      </Spacer>
+      <Content>
+        <DismissButon onClick={onDismiss}>
+          <X />
+        </DismissButon>
+        <Spacer />
+        <MobileNav>
+          <NavLink href="/sale">Sale</NavLink>
+          <NavLink href="/new">New&nbsp;Releases</NavLink>
+          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/women">Women</NavLink>
+          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/collections">Collections</NavLink>
+        </MobileNav>
+        <Spacer>
+          <PolicyFooter>
+            <PolicyLink href="/terms">Terms and Conditions</PolicyLink>
+            <PolicyLink href="/privacy">Privacy Policy</PolicyLink>
+            <PolicyLink href="/contact">Contact Us</PolicyLink>
+          </PolicyFooter>
+        </Spacer>
+      </Content>
     </Dialog>
   );
 };
 
 const Dialog = styled(DialogOverlay)`
   position: fixed;
-  background-color: white;
+  background-color: hsla(220deg 5% 40% / 0.8);
   top: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
-
-  width: 85%;
+  left: 0
+  bottom: 0;
+  width: 100%;
   height: 100%;
-  padding-left: 32px;
-  padding-bottom: 32px;
+
 
   :root {
     --reach-dialog: 1;
   }
+`;
+
+const Content = styled(DialogContent)`
+  position: fixed;
+  right: 0;
+  background-color: white;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  padding-bottom: 32px;
 `;
 
 const DismissButon = styled.button`
