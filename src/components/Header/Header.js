@@ -128,7 +128,7 @@ const NavLink = styled.a`
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: ${COLORS["var(--color-secondary)"]};
   }
 `;
 
